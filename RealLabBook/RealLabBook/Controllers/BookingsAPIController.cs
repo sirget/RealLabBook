@@ -29,17 +29,10 @@ namespace RealLabBook.Controllers
         }
 
         // GET: api/BookingsAPI/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Booking>> GetBooking(int id)
+        [HttpGet("{date}")]
+        public async Task<ActionResult<IEnumerable<Booking>>> GetBookings(string date)
         {
-            var booking = await _context.Bookings.FindAsync(id);
-
-            if (booking == null)
-            {
-                return NotFound();
-            }
-
-            return booking;
+            return await _context.Bookings.Where(d => d.start_time.Contains(date)).ToListAsync();
         }
 
         // PUT: api/BookingsAPI/5
