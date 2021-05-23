@@ -20,9 +20,9 @@ namespace RealLabBook.Controllers
         }
 
         // GET: Bookings
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int ToolID,string date = "")
         {
-            return View(await _context.Bookings.ToListAsync());
+            return View(await _context.Bookings.Where(d => d.ToolID.Equals(ToolID) && d.start_time.Contains(date)).ToListAsync());
         }
 
         // GET: Bookings/Details/5
