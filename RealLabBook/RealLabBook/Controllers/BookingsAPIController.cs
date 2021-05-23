@@ -32,6 +32,8 @@ namespace RealLabBook.Controllers
         [HttpGet("{date}")]
         public async Task<ActionResult<IEnumerable<Booking>>> GetBookings(string date)
         {
+
+
             return await _context.Bookings.Where(d => d.start_time.Contains(date)).ToListAsync();
         }
 
