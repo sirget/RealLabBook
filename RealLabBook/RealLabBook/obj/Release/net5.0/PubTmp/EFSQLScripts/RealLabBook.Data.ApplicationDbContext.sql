@@ -207,3 +207,29 @@ GO
 COMMIT;
 GO
 
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210523095737_userID_Status')
+BEGIN
+    DECLARE @var0 sysname;
+    SELECT @var0 = [d].[name]
+    FROM [sys].[default_constraints] [d]
+    INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+    WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Tool]') AND [c].[name] = N'Toolname');
+    IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [Tool] DROP CONSTRAINT [' + @var0 + '];');
+    ALTER TABLE [Tool] ALTER COLUMN [Toolname] nvarchar(30) NOT NULL;
+    ALTER TABLE [Tool] ADD DEFAULT N'' FOR [Toolname];
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210523095737_userID_Status')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20210523095737_userID_Status', N'5.0.6');
+END;
+GO
+
+COMMIT;
+GO
+
