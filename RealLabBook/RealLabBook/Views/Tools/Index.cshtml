@@ -1,29 +1,109 @@
-﻿@model IEnumerable<RealLabBook.Models.Tool>
-
-@{
+﻿@{
     ViewData["Title"] = "LabBook";
 }
+@section JavaScript
+{
+    <script type="text/javascript" src="@Url.Content("~/js/lab-card.js")"></script>
 
-<h1>This Lab</h1>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Toolname)
-            </th>
-            
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Toolname)
-                <a asp-controller="Bookings" asp-action="Create">Book Now</a>
-            </td>
-            
-        </tr>
 }
-    </tbody>
-</table>
+
+<div class="wrapper">
+    <div class="wrapper-lab">
+        <h1>This Lab</h1>
+        <div class="card-container">
+            <lab-card lab=" Lab 1"
+                      image="https://images.unsplash.com/photo-1619345371662-fccc15cc4814?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=976&q=80"
+                      itemName="Voltmeter"
+                      vol="12"
+                      desc="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"></lab-card>
+            <lab-card lab=" Lab 2"
+                      image="https://images.unsplash.com/photo-1553063085-dbbf64d936ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1189&q=80"
+                      itemName="Arduino"
+                      vol="12"
+                      desc="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"></lab-card>
+            <lab-card lab=" Lab 3"
+                      image="https://www.ato.com/content/images/thumbs/0001186_200-mhz-digital-oscilloscope-24-channels-4-gsas_550.jpeg"
+                      itemName="Oscilloscope"
+                      vol="12"
+                      desc="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"></lab-card>
+            <lab-card lab=" Lab 4"
+                      image="https://cf.shopee.co.th/file/c44dfdb32f3d522113780557ae3779aa"
+                      itemName="Soldering Iron"
+                      vol="12"
+                      desc="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"></lab-card>
+            <lab-card lab=" Lab 5"
+                      image="https://images.unsplash.com/photo-1582648373212-d5bd3015d35c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1042&q=80"
+                      itemName="Pliers"
+                      vol="12"
+                      desc="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"></lab-card>
+        </div>
+    </div>
+    <div class="wrapper-lab">
+        <h1>Lab: goLabLint.com</h1>
+        <div class="card-container">
+            <lab-card lab=" Lab 1"
+                      image="https://cdn.discordapp.com/attachments/366279112488124416/839898183957610506/arduino-uno-rev3-a000066-0f4.png"
+                      itemName="Voltmeter"
+                      vol="12"
+                      desc="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"></lab-card>
+            <lab-card lab=" Lab 2"
+                      image="https://cdn.discordapp.com/attachments/366279112488124416/839898183957610506/arduino-uno-rev3-a000066-0f4.png"
+                      itemName="Arduino"
+                      vol="12"
+                      desc="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"></lab-card>
+            <lab-card lab=" Lab 3"
+                      image="https://cdn.discordapp.com/attachments/366279112488124416/839898183957610506/arduino-uno-rev3-a000066-0f4.png"
+                      itemName="Oscilloscope"
+                      vol="12"
+                      desc="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"></lab-card>
+            <lab-card lab=" Lab 4"
+                      image="https://cdn.discordapp.com/attachments/366279112488124416/839898183957610506/arduino-uno-rev3-a000066-0f4.png"
+                      itemName="Soldering Iron"
+                      vol="12"
+                      desc="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"></lab-card>
+            <lab-card lab=" Lab 5"
+                      image="https://cdn.discordapp.com/attachments/366279112488124416/839898183957610506/arduino-uno-rev3-a000066-0f4.png"
+                      itemName="Pliers"
+                      vol="12"
+                      desc="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"></lab-card>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+@*@model IEnumerable<RealLabBook.Models.Tool>
+
+    @{
+        ViewData["Title"] = "LabBook";
+    }
+
+    <h1>This Lab</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Toolname)
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Toolname)
+                    <a asp-controller="Bookings" asp-action="Create">Book Now</a>
+                </td>
+
+            </tr>
+    }
+        </tbody>
+    </table>*@
