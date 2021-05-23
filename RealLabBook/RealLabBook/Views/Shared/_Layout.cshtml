@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["LabBook"] - Labbook</title>
+    <title>@ViewData["Title"] - Labbook</title>
     <link rel="stylesheet" href="~/css/styles.css" />
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Prompt" />
@@ -28,6 +28,7 @@
     </footer>
 
     <script type="text/javascript" src="@Url.Content("/Scripts/jquery-1.6.2.min.js")"></script>
+    @await RenderSectionAsync("Scripts", required: false)
     @RenderSection("JavaScript", required: false)
 
 
