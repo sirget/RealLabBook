@@ -21,6 +21,9 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.UserID)
+            </td>
+            <td>
                 <a asp-action="Delete" asp-route-id="@item.UserID">Delete</a>
             </td>
         </tr>
