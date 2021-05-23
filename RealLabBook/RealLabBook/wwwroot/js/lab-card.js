@@ -99,7 +99,7 @@ class LabCard extends HTMLElement {
         this.shadowRoot.querySelector('p').innerText = this.getAttribute('desc');
         this.shadowRoot.querySelector('label').innerText = this.getAttribute('vol') + " pieces";
         this.shadowRoot.querySelector('h3').innerText = this.getAttribute('itemName');
-        this.shadowRoot.querySelector('a').setAttribute('href', "/Bookingdetail?item=" + this.getAttribute('itemName'));
+        this.shadowRoot.querySelector('a').setAttribute('href', "/Bookings?item=" + this.getAttribute('itemName'));
     }
     handleClick() {
         console.log(this.getAttribute('name'))
