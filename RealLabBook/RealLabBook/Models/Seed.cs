@@ -15,13 +15,13 @@ namespace RealLabBook.Models
                     DbContextOptions<ApplicationDbContext>>()))
             {
                 // Look for any movies.
-                if (context.Tool.Any())
+                if (context.Tools.Any())
                 {
                     return;   // DB has been seeded
                 }
                 else
                 {
-                context.Tool.AddRange(
+                context.Tools.AddRange(
                                         new Tool
                                         {
                                             ToolID = 1,
