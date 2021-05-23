@@ -80,7 +80,7 @@ namespace RealLabBook.Controllers
             List<Blacklist> blacklists = await _context.Blacklists.Where(d => d.UserID.Equals(UserID)).ToListAsync();
             if(blacklists != null)
             {
-                return RedirectToAction("Banned","BookingsController");
+                //return RedirectToAction("Banned","BookingsController");
             }
             string[] time = { " 08:00", " 09:00", " 10:00", " 11:00", " 12:00", " 13:00", " 14:00", " 15:00", };
             
@@ -88,7 +88,7 @@ namespace RealLabBook.Controllers
             int tmp = 0;
             foreach (char e in quan)
             {
-                for(int i=0;i< (int)-48; i++)
+                for(int i=0;i< ((int)e)-48; i++)
                 {
                     Booking booking = new Booking();
                     booking.ToolID = ToolID;
