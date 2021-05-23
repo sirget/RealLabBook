@@ -23,9 +23,9 @@ namespace RealLabBook.Controllers
 
         // GET: api/ToolsAPI
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Tool>>> GetTools()
+        public async Task<ActionResult<IEnumerable<Tool>>> GetTools(int limit=5)
         {
-            return await _context.Tools.ToListAsync();
+            return await _context.Tools.Take(limit).ToListAsync();
         }
 
         // GET: api/ToolsAPI/5
