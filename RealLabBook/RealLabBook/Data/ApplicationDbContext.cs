@@ -4,10 +4,15 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using RealLabBook.Models;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
+using RealLabBook.Data;
+
 
 namespace RealLabBook.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<RealLabBookUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
