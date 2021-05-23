@@ -83,27 +83,37 @@ namespace RealLabBook.Controllers
                 //return RedirectToAction("Banned","BookingsController");
             }
             string[] time = { " 08:00", " 09:00", " 10:00", " 11:00", " 12:00", " 13:00", " 14:00", " 15:00", };
-            
+            List<int> Listbooked = new List<int>();
             IList<Booking> BookedList = new List<Booking>();
             int tmp = 0;
             foreach (char e in quan)
             {
                 for(int i=0;i< ((int)e)-48; i++)
                 {
-                    Booking booking = new Booking();
+                    Booking booking = new();
+
                     booking.ToolID = ToolID;
                     booking.start_time = date + time[tmp];
                     booking.UserID = UserID;
                     BookedList.Add(booking);
+                    Listbooked.Add(booking.BookingID);
                     _context.Add(booking);
                     await _context.SaveChangesAsync();
-                    
                 }
                 tmp++;
             }
+
+            ViewData["Listbooked"] = Listbooked;
             ViewData["BookedList"] = BookedList;
-            return View();            
+            return View();
         }
+
+        public async Task<IActionResult> Cancle(int ToolID, string date, string UserID, string quan)
+        {
+            
+            return View();
+        }
+
 
         // GET: Bookings/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -224,6 +234,7 @@ namespace RealLabBook.Controllers
             var booking = await _context.Bookings.FindAsync(id);
             _context.Bookings.Remove(booking);
             await _context.SaveChangesAsync();
+            
             return RedirectToAction("Index", "Tools");
         }
 
