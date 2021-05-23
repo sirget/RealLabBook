@@ -18,7 +18,7 @@ namespace RealLabBook.Controllers
         {
             _context = context;
         }
-
+        
         // GET: Blacklists
         public async Task<IActionResult> Index()
         {
