@@ -138,9 +138,10 @@ namespace RealLabBook.Controllers
         {
             if (ModelState.IsValid)
             {
+                
                 _context.Add(booking);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Tools");
             }
             return View(booking);
         }
@@ -191,7 +192,7 @@ namespace RealLabBook.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Tools");
             }
             return View(booking);
         }
@@ -219,10 +220,11 @@ namespace RealLabBook.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            
             var booking = await _context.Bookings.FindAsync(id);
             _context.Bookings.Remove(booking);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Tools");
         }
 
         private bool BookingExists(int id)
