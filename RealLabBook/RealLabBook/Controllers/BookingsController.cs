@@ -75,14 +75,14 @@ namespace RealLabBook.Controllers
         }
 
 
-        public async Task<IActionResult> Submit(int ToolID, string date,string UserID,string quan)
+        public async Task<IActionResult> Submit(int ToolID, string date,string UserID,string quan = "00000000")
         { 
             List<Tool> tools = await _context.Tools.Where(d => d.ToolID.Equals(ToolID)).ToListAsync();
             List<Blacklist> blacklists = await _context.Blacklists.Where(d => d.UserID.Equals(UserID)).ToListAsync();
-            if(blacklists != null)
-            {
-                return RedirectToAction("Banned","BookingsController");
-            }
+            //if(blacklists != null)
+            //{
+            //    return RedirectToAction("Banned","BookingsController");
+            //}
             string[] time = { " 08:00", " 09:00", " 10:00", " 11:00", " 12:00", " 13:00", " 14:00", " 15:00", };
             List<int> ListbookID = new List<int>();
             int tmp = 0;
