@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pnach\\Documents\\GitHub\\RealLabBook\\RealLabBook\\RealLabBook\\RealLabBook.csproj": {}
+    "C:\\Users\\Pnach\\Desktop\\Test\\RealLabBook\\RealLabBook\\RealLabBook.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pnach\\Documents\\GitHub\\RealLabBook\\RealLabBook\\RealLabBook\\RealLabBook.csproj": {
+    "C:\\Users\\Pnach\\Desktop\\Test\\RealLabBook\\RealLabBook\\RealLabBook.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pnach\\Documents\\GitHub\\RealLabBook\\RealLabBook\\RealLabBook\\RealLabBook.csproj",
+        "projectUniqueName": "C:\\Users\\Pnach\\Desktop\\Test\\RealLabBook\\RealLabBook\\RealLabBook.csproj",
         "projectName": "RealLabBook",
-        "projectPath": "C:\\Users\\Pnach\\Documents\\GitHub\\RealLabBook\\RealLabBook\\RealLabBook\\RealLabBook.csproj",
+        "projectPath": "C:\\Users\\Pnach\\Desktop\\Test\\RealLabBook\\RealLabBook\\RealLabBook.csproj",
         "packagesPath": "C:\\Users\\Pnach\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pnach\\Documents\\GitHub\\RealLabBook\\RealLabBook\\RealLabBook\\obj\\",
+        "outputPath": "C:\\Users\\Pnach\\Desktop\\Test\\RealLabBook\\RealLabBook\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Pnach\\AppData\\Roaming\\NuGet\\NuGet.Config",

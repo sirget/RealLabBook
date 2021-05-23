@@ -12,7 +12,6 @@ namespace RealLabBook.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
-
         }
         public DbSet<Tool> Tools { get; set; }
         public DbSet<Booking> Bookings { get; set; }

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <UserSecretsId>aspnet-RealLabBook-C6D8E3E5-DE38-4735-974A-11004D27A375</UserSecretsId>
+    <UserSecretsId>aspnet-RealLabBook-BCCDAB9D-49FF-411E-AEB6-42D04AEFD368</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
