@@ -521,3 +521,4 @@ d:\Git\RealLabBook\RealLabBook\RealLabBook\obj\Debug\net5.0\RealLabBook.dll
 d:\Git\RealLabBook\RealLabBook\RealLabBook\obj\Debug\net5.0\ref\RealLabBook.dll
 d:\Git\RealLabBook\RealLabBook\RealLabBook\obj\Debug\net5.0\RealLabBook.pdb
 d:\Git\RealLabBook\RealLabBook\RealLabBook\obj\Debug\net5.0\RealLabBook.genruntimeconfig.cache
+D:\Git\RealLabBook\RealLabBook\RealLabBook\obj\Debug\net5.0\Razor\Views\Bookings\Cancle.cshtml.g.cs
