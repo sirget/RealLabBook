@@ -44,9 +44,9 @@
                 <a asp-action="Edit" asp-route-id="@item.BookingID">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.BookingID">Details</a> |
 
-                <form asp-action="Delete">
+                <form asp-action="Delete" asp-route-id="@item.BookingID" >
                     <input type="hidden" asp-for="@item.BookingID" />
-                    <input type="submit" value="Delete" class="btn btn-danger" /> |
+                    <input type="submit"  value="Delete" class="btn btn-danger" /> |
                 </form>
             </td>
         </tr>
