@@ -24,7 +24,7 @@ namespace RealLabBook.Controllers
         {
             if (date == "")
             {
-                date = DateTime.Now.ToString("M-d-yyyy");
+                //date = DateTime.Now.ToString("M-d-yyyy");
             }
             List<Booking> booking = await _context.Bookings.Where(d => d.ToolID.Equals(ToolID) && d.start_time.Contains(date)).ToListAsync();
             List<Tool> tools = await _context.Tools.Where(d => d.ToolID.Equals(ToolID)).ToListAsync();
@@ -74,6 +74,7 @@ namespace RealLabBook.Controllers
             return View(booking);
         }
 
+        
         public async Task<IActionResult> Submit(int ToolID, string date,string UserID,string quan)
         { 
             List<Blacklist> blacklists = await _context.Blacklists.Where(d => d.UserID.Equals(UserID)).ToListAsync();
@@ -87,7 +88,7 @@ namespace RealLabBook.Controllers
             int tmp = 0;
             foreach (char e in quan)
             {
-                for(int i=0;i< (int)e; i++)
+                for(int i=0;i< (int)-48; i++)
                 {
                     Booking booking = new Booking();
                     booking.ToolID = ToolID;
@@ -96,6 +97,7 @@ namespace RealLabBook.Controllers
                     BookedList.Add(booking);
                     _context.Add(booking);
                     await _context.SaveChangesAsync();
+                    
                 }
                 tmp++;
             }
