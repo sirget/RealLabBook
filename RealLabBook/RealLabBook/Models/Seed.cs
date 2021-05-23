@@ -24,35 +24,35 @@ namespace RealLabBook.Models
                 context.Tools.AddRange(
                                         new Tool
                                         {
-                                            ToolID = 1,
+                                            
                                             Toolname = "Voltmeter",
                                             Quantity = 20
                                         },
 
                                         new Tool
                                         {
-                                            ToolID = 2,
+                                            
                                             Toolname = "Arduino",
                                             Quantity = 20
                                         },
 
                                         new Tool
                                         {
-                                            ToolID = 3,
+                                            
                                             Toolname = "Oscilloscope",
                                             Quantity = 20
                                         },
 
                                         new Tool
                                         {
-                                            ToolID = 4,
+                                            
                                             Toolname = "Soldering Iron",
                                             Quantity = 20
                                         },
 
                                         new Tool
                                         {
-                                            ToolID = 5,
+                                            
                                             Toolname = "Pliers",
                                             Quantity = 20
                                         }
