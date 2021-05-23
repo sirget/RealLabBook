@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bestv\\Documents\\GitHub\\RealLabBook\\RealLabBook\\RealLabBook\\RealLabBook.csproj": {}
+    "d:\\Git\\RealLabBook\\RealLabBook\\RealLabBook\\RealLabBook.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bestv\\Documents\\GitHub\\RealLabBook\\RealLabBook\\RealLabBook\\RealLabBook.csproj": {
+    "d:\\Git\\RealLabBook\\RealLabBook\\RealLabBook\\RealLabBook.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bestv\\Documents\\GitHub\\RealLabBook\\RealLabBook\\RealLabBook\\RealLabBook.csproj",
+        "projectUniqueName": "d:\\Git\\RealLabBook\\RealLabBook\\RealLabBook\\RealLabBook.csproj",
         "projectName": "RealLabBook",
-        "projectPath": "C:\\Users\\bestv\\Documents\\GitHub\\RealLabBook\\RealLabBook\\RealLabBook\\RealLabBook.csproj",
-        "packagesPath": "C:\\Users\\bestv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bestv\\Documents\\GitHub\\RealLabBook\\RealLabBook\\RealLabBook\\obj\\",
+        "projectPath": "d:\\Git\\RealLabBook\\RealLabBook\\RealLabBook\\RealLabBook.csproj",
+        "packagesPath": "C:\\Users\\koond\\.nuget\\packages\\",
+        "outputPath": "d:\\Git\\RealLabBook\\RealLabBook\\RealLabBook\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\bestv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\koond\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -85,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
