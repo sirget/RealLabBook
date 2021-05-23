@@ -10,8 +10,6 @@ using RealLabBook.Models;
 
 namespace RealLabBook.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
     public class BookingsAPIController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -22,82 +20,98 @@ namespace RealLabBook.Controllers
         }
 
         // GET: api/BookingsAPI
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Booking>>> GetBookings()
+        [Route("~/api/BookingsAPI/{ToolID}")]
+        public async Task<int[]> GetBookingsDate(int ToolID)
         {
-            return await _context.Bookings.ToListAsync();
-        }
-
-        // GET: api/BookingsAPI/5
-        [HttpGet("{date}")]
-        public async Task<ActionResult<IEnumerable<Booking>>> GetBookings(string date)
-        {
-
-
-            return await _context.Bookings.Where(d => d.start_time.Contains(date)).ToListAsync();
-        }
-
-        // PUT: api/BookingsAPI/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutBooking(int id, Booking booking)
-        {
-            if (id != booking.BookingID)
+            string date = DateTime.Now.ToString("M-d-yyyy");
+            List<Booking> booking = await _context.Bookings.Where(d => d.ToolID.Equals(ToolID) && d.start_time.Contains(date)).ToListAsync();
+            List<Tool> tools = await _context.Tools.Where(d => d.ToolID.Equals(ToolID)).ToListAsync();
+            int quan = tools[0].Quantity;
+            int[] avaliable = { quan, quan, quan, quan, quan, quan, quan, quan };
+            foreach (Booking b in booking)
             {
-                return BadRequest();
-            }
-
-            _context.Entry(booking).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!BookingExists(id))
+                if (b.start_time == date + " 08:00")
                 {
-                    return NotFound();
+                    avaliable[0]--;
                 }
-                else
+                else if (b.start_time == date + " 09:00")
                 {
-                    throw;
+                    avaliable[1]--;
+                }
+                else if (b.start_time == date + " 10:00")
+                {
+                    avaliable[2]--;
+                }
+                else if (b.start_time == date + " 11:00")
+                {
+                    avaliable[3]--;
+                }
+                else if (b.start_time == date + " 12:00")
+                {
+                    avaliable[4]--;
+                }
+                else if (b.start_time == date + " 13:00")
+                {
+                    avaliable[5]--;
+                }
+                else if (b.start_time == date + " 14:00")
+                {
+                    avaliable[6]--;
+                }
+                else if (b.start_time == date + " 15:00")
+                {
+                    avaliable[7]--;
                 }
             }
-
-            return NoContent();
+            return avaliable;
         }
 
-        // POST: api/BookingsAPI
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Booking>> PostBooking(Booking booking)
+        // GET: api/BookingsAPI
+        [Route("~/api/BookingsAPI/{ToolID}/{date}")]
+        public async Task<int[]> GetBookingsDate(int ToolID,string date)
         {
-            _context.Bookings.Add(booking);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetBooking", new { id = booking.BookingID }, booking);
-        }
-
-        // DELETE: api/BookingsAPI/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteBooking(int id)
-        {
-            var booking = await _context.Bookings.FindAsync(id);
-            if (booking == null)
+            List<Booking> booking = await _context.Bookings.Where(d => d.ToolID.Equals(ToolID) && d.start_time.Contains(date)).ToListAsync();
+            List<Tool> tools = await _context.Tools.Where(d => d.ToolID.Equals(ToolID)).ToListAsync();
+            int quan = tools[0].Quantity;
+            int[] avaliable = { quan, quan, quan, quan, quan, quan, quan, quan };
+            foreach (Booking b in booking)
             {
-                return NotFound();
+                if (b.start_time == date + " 08:00")
+                {
+                    avaliable[0]--;
+                }
+                else if (b.start_time == date + " 09:00")
+                {
+                    avaliable[1]--;
+                }
+                else if (b.start_time == date + " 10:00")
+                {
+                    avaliable[2]--;
+                }
+                else if (b.start_time == date + " 11:00")
+                {
+                    avaliable[3]--;
+                }
+                else if (b.start_time == date + " 12:00")
+                {
+                    avaliable[4]--;
+                }
+                else if (b.start_time == date + " 13:00")
+                {
+                    avaliable[5]--;
+                }
+                else if (b.start_time == date + " 14:00")
+                {
+                    avaliable[6]--;
+                }
+                else if (b.start_time == date + " 15:00")
+                {
+                    avaliable[7]--;
+                }
             }
-
-            _context.Bookings.Remove(booking);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
+            return avaliable;
         }
 
-        private bool BookingExists(int id)
-        {
-            return _context.Bookings.Any(e => e.BookingID == id);
-        }
+        
     }
 }
