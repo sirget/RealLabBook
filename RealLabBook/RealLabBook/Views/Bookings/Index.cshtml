@@ -10,6 +10,7 @@
     <script type="text/javascript" src="@Url.Content("~/js/time-card.js")"></script>
 
 }
+
 <div class="sel-wrapper">
 
     <div class="topic">Select Booking Time</div>
@@ -38,6 +39,18 @@
             </div>
         </div>
     </div>
+    <div>
+        <table class="table">
+            @foreach (var item in (List<int>)ViewData["ListQuan"])
+            {
+                <tr>
+                    <td>
+                        @item
+                    </td>
+                </tr>
+             }
+        </table>
+        </div>
     <div>
         <h1>Index</h1>
 

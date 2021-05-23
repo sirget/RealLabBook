@@ -22,7 +22,56 @@ namespace RealLabBook.Controllers
         // GET: Bookings
         public async Task<IActionResult> Index(int ToolID,string date = "")
         {
-            return View(await _context.Bookings.Where(d => d.ToolID.Equals(ToolID) && d.start_time.Contains(date)).ToListAsync());
+            if (date == "")
+            {
+                date = DateTime.Now.ToString("M-d-yyyy");
+            }
+            List<Booking> booking = await _context.Bookings.Where(d => d.ToolID.Equals(ToolID) && d.start_time.Contains(date)).ToListAsync();
+            List<Tool> tools = await _context.Tools.Where(d => d.ToolID.Equals(ToolID)).ToListAsync();
+            int quan = tools[0].Quantity;
+            int[] avaliable = { quan, quan, quan, quan, quan, quan, quan, quan };
+            foreach(Booking b in booking)
+            {
+                if(b.start_time == date + " 08:00")
+                {
+                    avaliable[0]--;
+                }
+                else if (b.start_time == date + " 09:00")
+                {
+                    avaliable[1]--;
+                }
+                else if (b.start_time == date + " 10:00")
+                {
+                    avaliable[2]--;
+                }
+                else if (b.start_time == date + " 11:00")
+                {
+                    avaliable[3]--;
+                }
+                else if (b.start_time == date + " 12:00")
+                {
+                    avaliable[4]--;
+                }
+                else if (b.start_time == date + " 13:00")
+                {
+                    avaliable[5]--;
+                }
+                else if (b.start_time == date + " 14:00")
+                {
+                    avaliable[6]--;
+                }
+                else if (b.start_time == date + " 15:00")
+                {
+                    avaliable[7]--;
+                }
+            }
+            List<int> ListQuan = new List<int>();
+            for (int i = 0; i < 8; i++)
+            {
+                ListQuan.Add(avaliable[i]);
+            }
+            ViewData["ListQuan"] = ListQuan;
+            return View(booking);
         }
 
         // GET: Bookings/Details/5
