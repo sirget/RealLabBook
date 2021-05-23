@@ -346,3 +346,15 @@ C:\Users\Pnach\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\
 C:\Users\Pnach\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\ref\RealLabBook.dll
 C:\Users\Pnach\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\RealLabBook.pdb
 C:\Users\Pnach\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\RealLabBook.genruntimeconfig.cache
+C:\Users\bestv\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\RealLabBook.csprojAssemblyReference.cache
+C:\Users\bestv\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\RealLabBook.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bestv\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\RealLabBook.AssemblyInfoInputs.cache
+C:\Users\bestv\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\RealLabBook.AssemblyInfo.cs
+C:\Users\bestv\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\RealLabBook.csproj.CoreCompileInputs.cache
+C:\Users\bestv\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\RealLabBook.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\bestv\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\RealLabBook.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\bestv\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\RealLabBook.RazorAssemblyInfo.cache
+C:\Users\bestv\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\RealLabBook.RazorAssemblyInfo.cs
+C:\Users\bestv\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\RealLabBook.dll
+C:\Users\bestv\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\ref\RealLabBook.dll
+C:\Users\bestv\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\RealLabBook.pdb
