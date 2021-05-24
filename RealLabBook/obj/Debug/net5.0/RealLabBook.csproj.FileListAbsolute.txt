@@ -178,3 +178,4 @@ C:\Users\bestv\source\repos\RealLabBook\RealLabBook\obj\Debug\net5.0\Razor\Views
 C:\Users\bestv\source\repos\RealLabBook\RealLabBook\obj\Debug\net5.0\Razor\Views\BookingsLablint\Edit.cshtml.g.cs
 C:\Users\bestv\source\repos\RealLabBook\RealLabBook\obj\Debug\net5.0\Razor\Views\BookingsLablint\Index.cshtml.g.cs
 C:\Users\bestv\source\repos\RealLabBook\RealLabBook\obj\Debug\net5.0\Razor\Views\Bookings\History.cshtml.g.cs
+C:\Users\bestv\source\repos\RealLabBook\RealLabBook\obj\Debug\net5.0\Razor\Views\accessdenied\Index.cshtml.g.cs
