@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RealLabBook.Data;
 using RealLabBook.Models;
+using Microsoft.AspNetCore.Cors;
 
 namespace RealLabBook.Controllers
 {
@@ -20,6 +21,7 @@ namespace RealLabBook.Controllers
         }
 
         // GET: api/BookingsAPI
+        [EnableCors("AllowAny")]
         [Route("~/api/BookingsAPI/{ToolID}")]
         public async Task<int[]> GetBookingsDate(int ToolID)
         {
@@ -67,6 +69,7 @@ namespace RealLabBook.Controllers
         }
 
         // GET: api/BookingsAPI
+        [EnableCors("AllowAny")]
         [Route("~/api/BookingsAPI/{ToolID}/{date}")]
         public async Task<int[]> GetBookingsDate(int ToolID,string date)
         {
