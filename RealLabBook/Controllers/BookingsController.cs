@@ -81,7 +81,7 @@ namespace RealLabBook.Controllers
             return View(await _context.Bookings.Where(d => d.UserID.Equals(UserID)).ToListAsync());
         }
 
-
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> Submit(int ToolID, string date,string UserID,string quan)
         { 
             List<Blacklist> blacklists = await _context.Blacklists.Where(d => d.UserID.Equals(UserID)).ToListAsync();
@@ -114,14 +114,7 @@ namespace RealLabBook.Controllers
             ViewData["BookedList"] = BookedList;
             return View();
         }
-
-        public async Task<IActionResult> Cancle(int ToolID, string date, string UserID, string quan)
-        {
-            
-            return View();
-        }
-
-
+        [Authorize(Roles = "User")]
         // GET: Bookings/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -139,7 +132,7 @@ namespace RealLabBook.Controllers
 
             return View(booking);
         }
-
+        [Authorize(Roles = "User")]
         // GET: Bookings/Create
         public IActionResult Create()
         {
@@ -149,6 +142,7 @@ namespace RealLabBook.Controllers
         // POST: Bookings/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "User")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("BookingID,ToolID,UserID,start_time")] Booking booking)

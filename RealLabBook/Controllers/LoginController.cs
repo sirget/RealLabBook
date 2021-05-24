@@ -13,10 +13,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace RealLabBook.Controllers
 {
+
     public class LoginController : Controller
     {
         private readonly ApplicationDbContext _db;
@@ -24,12 +25,14 @@ namespace RealLabBook.Controllers
         {
             _db = db;
         }
+        
+
         public IActionResult Index()
         {
             if (HttpContext.User.Identity.IsAuthenticated)
                 return RedirectToRoute(new
                 {
-                    controller = "home",
+                    controller = "Tools",
                     action = "index",
                 });
             return View();
@@ -66,6 +69,7 @@ namespace RealLabBook.Controllers
             });
         }
 
+        [Authorize]
         [Route("~/logout")]
         public IActionResult Logout()
         {
@@ -75,7 +79,7 @@ namespace RealLabBook.Controllers
             });
             return RedirectToRoute(new
             {
-                controller = "home",
+                controller = "Tools",
                 action = "index",
             });
         }

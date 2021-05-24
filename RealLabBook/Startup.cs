@@ -54,7 +54,7 @@ namespace RealLabBook
                 options.ExpireTimeSpan = TimeSpan.FromHours(2);
                 options.Cookie.HttpOnly = true;
                 options.Cookie.Name = "LoginCookie";
-                options.AccessDeniedPath = new PathString("/access-denied");
+                options.AccessDeniedPath = new PathString("/accessdenied");
                 options.LoginPath = new PathString("/login");
             });
             services.AddControllersWithViews();
