@@ -1,5 +1,9 @@
 ﻿@model IEnumerable<RealLabBook.Models.Booking>
 
+@{
+    ViewData["Title"] = "History";
+}
+
 <div class="his-wrapper">
     <div class="search-box">
         <input id="text-input" placeholder="Search ID here...">
@@ -25,9 +29,9 @@
                     @Html.DisplayFor(modelItem => item.start_time)
                 </td>
                 <td>
-                    <form asp-action="Delete">
+                    <form asp-action="Delete" asp-route-id="@item.BookingID">
                         <input type="hidden" asp-for="@item.BookingID" />
-                        <input type="submit" value="Delete" /> |
+                        <input type="submit" value="Delete" class="btn btn-danger" />
                     </form>
                 </td>
             </tr>
