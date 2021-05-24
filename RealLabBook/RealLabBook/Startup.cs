@@ -36,6 +36,13 @@ namespace RealLabBook
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
 
+            services.AddCors(options => {
+                options.AddPolicy(name: "AllowAny",
+                    builder => {
+                        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                    });
+            });
+
             services.Configure<IdentityOptions>(options =>
             {
                 // Password settings.
