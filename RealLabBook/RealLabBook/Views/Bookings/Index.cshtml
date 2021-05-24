@@ -4,12 +4,14 @@
 @model IEnumerable<RealLabBook.Models.Booking>
 @{
     ViewData["Title"] = "Booking";
+    var quan = ViewData["ListQuan"] as List<int>;
 }
 @section JavaScript
 {
     <script type="text/javascript" src="@Url.Content("~/js/time-card.js")"></script>
 
 }
+
 
 <div class="sel-wrapper">
 
@@ -28,14 +30,14 @@
         <div class="sel-hour">
             <div class="title-hour"> Select Time interval</div>
             <div class="card-container">
-                <time-card hour="8.00" vol="20" enough="true"></time-card>
-                <time-card hour="9.00" vol="20"></time-card>
-                <time-card hour="10.00" vol="20"></time-card>
-                <time-card hour="11.00" vol="20"></time-card>
-                <time-card hour="12.00" vol="20"></time-card>
-                <time-card hour="13.00" vol="20"></time-card>
-                <time-card hour="14.00" vol="20"></time-card>
-                <time-card hour="15.00" vol="20"></time-card>
+                <time-card hour="8.00" vol=@quan[0] enough="true"></time-card>
+                <time-card hour="9.00" vol=@quan[1] ></time-card>
+                <time-card hour="10.00" vol=@quan[2]></time-card>
+                <time-card hour="11.00" vol=@quan[3]></time-card>
+                <time-card hour="12.00" vol=@quan[4]></time-card>
+                <time-card hour="13.00" vol=@quan[5]></time-card>
+                <time-card hour="14.00" vol=@quan[6]></time-card>
+                <time-card hour="15.00" vol=@quan[7]></time-card>
             </div>
         </div>
     </div>
