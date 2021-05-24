@@ -8,8 +8,17 @@ using Microsoft.EntityFrameworkCore;
 using RealLabBook.Data;
 using RealLabBook.Models;
 
+
+using System.Diagnostics;
+
+using Microsoft.Extensions.Logging;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
 namespace RealLabBook.Controllers
 {
+    
     public class ToolsController : Controller
     {
         private readonly ApplicationDbContext _context;

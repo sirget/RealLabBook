@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RealLabBook.Data;
 
-namespace RealLabBook.Data.Migrations
+namespace RealLabBook.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -268,6 +268,63 @@ namespace RealLabBook.Data.Migrations
                     b.HasKey("ToolID");
 
                     b.ToTable("Tool");
+                });
+
+            modelBuilder.Entity("RealLabBook.Models.User", b =>
+                {
+                    b.Property<Guid>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("role")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("surname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("User");
+
+                    b.HasData(
+                        new
+                        {
+                            id = new Guid("4b625e40-e0f4-46dd-9ef7-b61f2afdd58f"),
+                            email = "admin@kmitl.ac.th",
+                            name = "admin",
+                            password = "$2a$11$bPPci79j11DTyz9KReD3Pu6UZS7MVb0h4JqL75ttThSNt/VBwfi1K",
+                            role = "อาจารย์",
+                            status = "Normal",
+                            surname = "golablint"
+                        },
+                        new
+                        {
+                            id = new Guid("08179acc-5606-41f3-85f9-aaf31f95bb66"),
+                            email = "61011163@kmitl.ac.th",
+                            name = "โสภิตา",
+                            password = "$2a$11$A/chN7u.QrzRtW6Klwiup.qb49nBWmNjy1hlWsK3K5fvPpTcyguy2",
+                            role = "นักศึกษา",
+                            status = "Normal",
+                            surname = "เอี่ยมจุ้ย"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

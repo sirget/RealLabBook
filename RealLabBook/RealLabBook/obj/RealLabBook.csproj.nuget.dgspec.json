@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Git\\RealLabBook\\RealLabBook\\RealLabBook\\RealLabBook.csproj": {}
+    "C:\\Users\\bestv\\source\\repos\\RealLabBook\\RealLabBook\\RealLabBook.csproj": {}
   },
   "projects": {
-    "D:\\Git\\RealLabBook\\RealLabBook\\RealLabBook\\RealLabBook.csproj": {
+    "C:\\Users\\bestv\\source\\repos\\RealLabBook\\RealLabBook\\RealLabBook.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Git\\RealLabBook\\RealLabBook\\RealLabBook\\RealLabBook.csproj",
+        "projectUniqueName": "C:\\Users\\bestv\\source\\repos\\RealLabBook\\RealLabBook\\RealLabBook.csproj",
         "projectName": "RealLabBook",
-        "projectPath": "D:\\Git\\RealLabBook\\RealLabBook\\RealLabBook\\RealLabBook.csproj",
-        "packagesPath": "C:\\Users\\koond\\.nuget\\packages\\",
-        "outputPath": "D:\\Git\\RealLabBook\\RealLabBook\\RealLabBook\\obj\\",
+        "projectPath": "C:\\Users\\bestv\\source\\repos\\RealLabBook\\RealLabBook\\RealLabBook.csproj",
+        "packagesPath": "C:\\Users\\bestv\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bestv\\source\\repos\\RealLabBook\\RealLabBook\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\koond\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\bestv\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -43,15 +40,23 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.2, )"
+            },
+            "FoolProof.Core": {
+              "target": "Package",
+              "version": "[1.1.9, )"
+            },
+            "Microsoft.AspNetCore.Authentication.Certificate": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[5.0.5, )"
-            },
-            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[5.0.5, )"
-            },
-            "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
               "version": "[5.0.5, )"
             },
@@ -65,9 +70,17 @@
               "target": "Package",
               "version": "[5.0.6, )"
             },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.11.0, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[5.0.2, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
             }
           },
           "imports": [
@@ -88,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

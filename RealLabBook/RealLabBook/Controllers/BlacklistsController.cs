@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RealLabBook.Data;
 using RealLabBook.Models;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace RealLabBook.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class BlacklistsController : Controller
     {
         private readonly ApplicationDbContext _context;
