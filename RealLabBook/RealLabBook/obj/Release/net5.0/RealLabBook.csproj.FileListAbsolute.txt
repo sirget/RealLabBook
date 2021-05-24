@@ -523,3 +523,4 @@ C:\Users\bestv\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\
 C:\Users\Pnach\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\Razor\Views\Bookings\Submit.cshtml.g.cs
 C:\Users\bestv\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\Razor\Views\Bookings\Cancle.cshtml.g.cs
 C:\Users\bestv\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\Razor\Views\Bookings\Submit.cshtml.g.cs
+C:\Users\Pnach\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\Razor\Views\Bookings\Cancle.cshtml.g.cs
