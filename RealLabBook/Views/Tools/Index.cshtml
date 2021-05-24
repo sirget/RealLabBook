@@ -1,0 +1,98 @@
+﻿@{
+    ViewData["Title"] = "LabBook";
+}
+@{ 
+    var quan = ViewData["ListQuan"] as List<int>;
+}
+@section JavaScript
+{
+    <script type="text/javascript" src="@Url.Content("~/js/lab-card.js")"></script>
+
+}
+
+<div class="wrapper">
+    <div class="wrapper-lab">
+        <h1>This Lab</h1>
+        <div class="card-container">
+            <lab-card lab=" Lab 1"
+                      image="https://images.unsplash.com/photo-1619345371662-fccc15cc4814?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=976&q=80"
+                      itemname="Voltmeter"
+                      vol=@quan[0]
+                      itemid="1"
+                      desc="เครื่องวัดแรงดันไฟฟ้า"></lab-card>
+            <lab-card lab=" Lab 2"
+                      image="https://images.unsplash.com/photo-1553063085-dbbf64d936ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1189&q=80"
+                      itemname="Arduino"
+                      vol=@quan[1]
+                      itemid="2"
+                      desc="บอร์ดไมโครคอนโทรเลอร์ตระกูล AVR"></lab-card>
+            <lab-card lab=" Lab 3"
+                      image="https://www.ato.com/content/images/thumbs/0001186_200-mhz-digital-oscilloscope-24-channels-4-gsas_550.jpeg"
+                      itemname="Oscilloscope"
+                      vol=@quan[2]
+                      itemid="3"
+                      desc="เครื่องวัดสัญญาณไฟฟ้า"></lab-card>
+            <lab-card lab=" Lab 4"
+                      image="https://cf.shopee.co.th/file/c44dfdb32f3d522113780557ae3779aa"
+                      itemname="Soldering Iron"
+                      vol=@quan[3]
+                      itemid="4"
+                      desc="หัวแร้ง"></lab-card>
+            <lab-card lab=" Lab 5"
+                      image="https://images.unsplash.com/photo-1582648373212-d5bd3015d35c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1042&q=80"
+                      itemname="Pliers"
+                      vol=@quan[4]
+                      itemid="5"
+                      desc="คีม"></lab-card>
+        </div>
+    </div>
+    <div class="wrapper-lab">
+        <h1>Lab: goLabLint.com</h1>
+        <div class="card-container">
+            <lab-card id="gtool1"
+                      lab=" Lab 1"
+                      image="https://itcats.in/images/spinner-loop.gif"
+                      itemname="Loading"
+                      vol="0"
+                      desc="Loading"
+                      lablint="true"
+                      itemid="d95ec54b-636f-4947-8a0c-a23261948f42"></lab-card>
+            <lab-card id="gtool2"
+                      lab=" Lab 2"
+                      image="https://itcats.in/images/spinner-loop.gif"
+                      itemname="Loading"
+                      vol="0"
+                      desc="Loading"
+                      lablint="true"
+                      itemid="dd462e6a-7b9e-4fc5-a8cf-7e02dc2c4457"></lab-card>
+            <lab-card id="gtool3"
+                      lab=" Lab 3"
+                      image="https://itcats.in/images/spinner-loop.gif"
+                      itemname="Loading"
+                      vol="0"
+                      desc="Loading"
+                      lablint="true"
+                      itemid="5d9171a5-51cf-4f1b-8262-566fe6bd54af"></lab-card>
+            <lab-card id="gtool4"
+                      lab=" Lab 4"
+                      image="https://itcats.in/images/spinner-loop.gif"
+                      itemname="Loading"
+                      vol="0"
+                      desc="Loading"
+                      lablint="true"
+                      itemid="d2adfb9c-4ed7-4922-b731-ec733bc1fbe1"></lab-card>
+            <lab-card id="gtool5"
+                      lab=" Lab 5"
+                      image="https://itcats.in/images/spinner-loop.gif"
+                      itemname="Loading"
+                      vol="0"
+                      desc="Loading"
+                      lablint="true"
+                      itemid="ce8227bb-7ecd-41ea-a9dd-81078bbf496d"></lab-card>
+        </div>
+    </div>
+</div>
+
+
+
+

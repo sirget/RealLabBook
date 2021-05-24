@@ -1,0 +1,69 @@
+﻿@model IEnumerable<RealLabBook.Models.Booking>
+
+@{
+    ViewData["Title"] = "History";
+}
+
+<div class="his-wrapper">
+    <div class="search-box">
+        <input id="text-input" placeholder="Search ID here...">
+        <button onclick="getInputValue();" id="input-btn"><i class="fa fa-search"></i></button>
+    </div>
+    <div class="text-id">ID: <span id="print-text">-</span></div>
+    <table class="history-table">
+        <tr>
+            <th class="equipment">@Html.DisplayNameFor(model => model.BookingID)</th>
+            <th class="status">@Html.DisplayNameFor(model => model.ToolID)</th>
+            <th class="start">@Html.DisplayNameFor(model => model.start_time)</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookingID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ToolID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.start_time)
+                </td>
+                <td>
+                    <form asp-action="Delete" asp-route-id="@item.BookingID">
+                        <input type="hidden" asp-for="@item.BookingID" />
+                        <input type="submit" value="Delete" class="btn btn-danger" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+@section JavaScript
+{
+    <script>
+        var input = document.getElementById("text-input");
+        var UserID;
+        getItemid();
+        input.addEventListener("keyup", function (event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("input-btn").click();
+            }
+        });
+
+        function getInputValue() {
+            var inputVal = document.getElementById("text-input").value;
+            document.getElementById('print-text').innerHTML = inputVal;
+            window.location.href = "/Bookings/History?UserID=" + inputVal;
+        }
+
+        function getItemid() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            UserID = urlParams.get("UserID");
+            document.getElementById('print-text').innerHTML = UserID;
+        }
+
+
+    </script>
+}
