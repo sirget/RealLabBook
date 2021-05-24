@@ -74,7 +74,7 @@ namespace RealLabBook.Controllers
             return View(booking);
         }
 
-        public async Task<IActionResult> History(int UserID)
+        public async Task<IActionResult> History(string UserID)
         {
             return View(await _context.Bookings.Where(d => d.UserID.Equals(UserID)).ToListAsync());
         }
@@ -233,14 +233,16 @@ namespace RealLabBook.Controllers
         // POST: Bookings/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             
             var booking = await _context.Bookings.FindAsync(id);
+            
             _context.Bookings.Remove(booking);
             await _context.SaveChangesAsync();
-            
-            return RedirectToAction("Index", "Tools");
+
+
+            return Redirect(string.Format("~/Bookings/History?UserID={0}", booking.UserID));
         }
 
         private bool BookingExists(int id)

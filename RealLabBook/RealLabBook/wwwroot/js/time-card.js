@@ -179,6 +179,7 @@ var selectList = [0, 0, 0, 0, 0, 0, 0, 0];
 var user, date, eqt,itemid;
 var inputVol = [40, 10, 10, 20, 10, 30, 10, 20];
 var ToolID;
+var urldate;
 getItemid();
 console.log(itemid);
 if (lablint == false) {
@@ -205,17 +206,18 @@ function changeCardVol() {
 }
 function handleBook() {
     var i;
+    user = document.getElementById('userinput').value;
+    date = document.getElementById("dateinput").value;
+    eqt = document.getElementById("eqtinput").value;
     for (i = 0; i < 8; i++) {
         if (document.getElementById("card" + (i + 1)).getAttribute("select") == "true") {
-            selectList[i] = 1;
+            selectList[i] = eqt;
         }
         else {
             selectList[i] = 0;
         }
     }
-    user = document.getElementById('userinput').value;
-    date = document.getElementById("dateinput").value;
-    eqt = document.getElementById("eqtinput").value;
+    
     if (user == '' || date == '' || eqt == '') {
         alert("กรุณากรอกข้อมูลให้ครบถ้วน");
     }
@@ -228,6 +230,8 @@ function handleBook() {
             alert("กรุณาเลือกเวลาจอง");
         }
         else {
+            var a = document.getElementById("abook");
+            a.setAttribute("href", "/Bookings/Submit?ToolID=" + ToolID + "&date=" + changeDateformat(date) + "&UserID=" + user + "&quan=" + quan);
             console.log(quan, user, changeDateformat(date), eqt);
         }
 
@@ -237,7 +241,7 @@ function handleBook() {
 function handleDateChange() {
     var a = document.getElementById("asearch");
 
-    a.setAttribute("href", "/Bookings?ToolID=" + ToolID + "&date=" + document.getElementById("dateinput").value)
+    a.setAttribute("href", "/Bookings?ToolID=" + ToolID + "&date=" + changeDateformat(document.getElementById("dateinput").value))
 }
 
 
@@ -293,9 +297,36 @@ function changeDateformat(date) {
     return (parseInt(tmp[1]) + '-' + parseInt(tmp[2]) + '-' + parseInt(tmp[0]));
 }
 
+function changrDateformat2(date) {
+    if (date != null) {
+
+        var tmp = date.split('-');
+        var tmpM,tmpD;
+        if (tmp[0] < 10) {
+            tmpM = "0" + tmp[0];
+        }
+        else
+            tmpM = tmp[0];
+
+        if (tmp[1] < 10) {
+            tmpD = "0" + tmp[1];
+        }
+        else
+            tmpD = tmp[1];
+        console.log(tmp[2] + '-' + tmpM + '-' + tmpD);
+        return tmp[2] + '-' + tmpM + '-' + tmpD;
+    }
+}
+
 function getItemid() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     itemid = urlParams.get("itemid");
     ToolID = urlParams.get("ToolID");
+    urldate = urlParams.get("date");
+    setInputDate();
+}
+
+function setInputDate() {
+    document.getElementById("dateinput").value = changrDateformat2(urldate);
 }
