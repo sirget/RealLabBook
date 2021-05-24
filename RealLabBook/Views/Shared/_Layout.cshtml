@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Labbook</title>
     <link rel="stylesheet" href="~/css/styles.css" />
+    <link rel="stylesheet" href="~/css/login.css" />
+    <link rel="stylesheet" href="~/css/register.css" />
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Prompt" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -13,9 +15,14 @@
 </head>
 <body>
     <header>
-        <a href="/"><h1>LABBOOK</h1></a>
-        <a asp-controller="Bookings" asp-action="History"><h3>Booking History</h3></a>
+        <div class="topnav">
+            <a href="/" class="home">LABBOOK</a>
+            <a asp-controller="Bookings" asp-action="History" class="history" >Booking History</a>
+            <a asp-controller="Login" asp-action="Index" class="state" id="state" style="float:right">Login</a>
+            <a asp-controller="Register" asp-action="Index" class="state" id="state" style="float:right">Register</a>
+        </div>
     </header>
+    
 
     @RenderBody()
 

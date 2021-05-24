@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace RealLabBook.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public class BlacklistsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -24,7 +24,7 @@ namespace RealLabBook.Controllers
         // GET: Blacklists
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Blacklists.ToListAsync());
+            return View(await _context.User.ToListAsync());
         }
 
         // GET: Blacklists/Details/5
