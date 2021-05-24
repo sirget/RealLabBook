@@ -22,6 +22,14 @@ namespace RealLabBook.Controllers
         // GET: Tools
         public async Task<IActionResult> Index()
         {
+            List<Tool> tools = await _context.Tools.ToListAsync();
+            int[] quan = { tools[0].Quantity, tools[1].Quantity, tools[2].Quantity, tools[3].Quantity, tools[4].Quantity, };
+            List<int> ListQuan = new List<int>();
+            for (int i = 0; i < 5; i++)
+            {
+                ListQuan.Add(quan[i]);
+            }
+            ViewData["ListQuan"] = ListQuan;
             return View(await _context.Tools.ToListAsync());
         }
 

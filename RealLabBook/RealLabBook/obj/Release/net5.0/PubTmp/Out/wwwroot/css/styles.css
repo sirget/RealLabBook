@@ -26,6 +26,7 @@ header {
 
     header h3 {
         font-weight: bold;
+        color:black;
     }
 
 .wrapper {
@@ -190,3 +191,106 @@ a {
         align-items: center;
         justify-content: center;
     }
+
+    .sel-wrapper .select .sel-date button {
+        background-color: #009688;
+        border: none;
+        color: #ffffff;
+        border-radius: 25px;
+        width: 100%;
+        height: 30px;
+        font-size: 16px;
+        margin-bottom: 10px;
+        margin-left:10px;
+        cursor: pointer;
+    }
+
+
+    /*history*/
+
+.his-wrapper {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #f6fffd;
+    padding: 30px 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+    .his-wrapper .search-box {
+        margin: 0 auto;
+        width: 800px;
+        border-radius: 100px;
+        overflow: hidden;
+        padding: 10px;
+        background: #f1f1f1;
+        display: flex;
+        align-items: center;
+    }
+
+        .his-wrapper .search-box input {
+            padding: 10px;
+            font-size: 18px;
+            float: left;
+            width: 90%;
+            background: #f1f1f1;
+            padding-left: 20px;
+            border: none;
+            outline: none;
+        }
+
+        .his-wrapper .search-box button {
+            float: left;
+            width: 10%;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            border: none;
+        }
+
+            .his-wrapper .search-box button:hover {
+                color: #009688;
+            }
+
+    .his-wrapper .text-id {
+        text-align: center;
+        color: #263238;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 20px;
+    }
+
+    .his-wrapper .history-table {
+        margin: 0 auto;
+        width: 800px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+    }
+
+        .his-wrapper .history-table th {
+            padding: 10px;
+            color: #009688;
+        }
+
+        .his-wrapper .history-table tr {
+            text-align: center;
+        }
+
+        .his-wrapper .history-table th.equipment {
+            width: 25%;
+        }
+
+        .his-wrapper .history-table th.status {
+            width: 25%;
+        }
+
+        .his-wrapper .history-table th.start {
+            width: 25%;
+        }
+
+        .his-wrapper .history-table th.end {
+            width: 25%;
+        }

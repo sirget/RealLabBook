@@ -42,6 +42,12 @@ template.innerHTML = `
 .labcard .detail .title {
   font-size: 24px;
   color: rgba(38, 50, 56);
+  height:30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.labcard .detail .title:hover{
+  overflow: visible;
 }
 
 .labcard .detail .equity {
@@ -98,17 +104,39 @@ class LabCard extends HTMLElement {
         this.shadowRoot.querySelector('img').setAttribute('src', this.getAttribute('image'));
         this.shadowRoot.querySelector('p').innerText = this.getAttribute('desc');
         this.shadowRoot.querySelector('label').innerText = this.getAttribute('vol') + " pieces";
-        this.shadowRoot.querySelector('h3').innerText = this.getAttribute('itemName');
-        this.shadowRoot.querySelector('a').setAttribute('href', "/Bookings?ToolID=" + this.getAttribute('ToolID'));
+        this.shadowRoot.querySelector('h3').innerText = this.getAttribute('itemname');
+        if (this.getAttribute("lablint") == "true") {
+            this.shadowRoot.querySelector('a').setAttribute('href', "/Bookingslablint?itemid=" + this.getAttribute('itemname'));
+        }
+        else {
+            this.shadowRoot.querySelector('a').setAttribute('href', "/Bookings?ToolID=" + this.getAttribute('itemname'));
+        }
+        
     }
-    handleClick() {
-        console.log(this.getAttribute('name'))
+    static get observedAttributes() {
+        return ["image", "desc", "vol", "itemname"];
     }
-    connectedCallback() {
-        this.shadowRoot.querySelector('button').addEventListener('click', () => this.handleClick());
-    }
-    discoonnectedCallback() {
-        this.shadowRoot.querySelector('button').removeEventListener();
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (name == "image") {
+            this.shadowRoot.querySelector('img').setAttribute('src', this.getAttribute('image'));
+        }
+        else if (name == "desc") {
+            this.shadowRoot.querySelector('p').innerText = this.getAttribute('desc');
+        }
+        else if (name == "vol") {
+
+            this.shadowRoot.querySelector('label').innerText = this.getAttribute('vol') + " pieces";
+        }
+        else if (name == "itemname") {
+            this.shadowRoot.querySelector('h3').innerText = this.getAttribute('itemname');
+            if (this.getAttribute("lablint") == "true") {
+                this.shadowRoot.querySelector('a').setAttribute('href', "/Bookingslablint/Index?itemid=" + this.getAttribute('itemid'));
+            }
+            else {
+                this.shadowRoot.querySelector('a').setAttribute('href', "/Bookings?ToolID=" + this.getAttribute('itemid'));
+            }
+        }
+
     }
 
 }
@@ -116,3 +144,26 @@ customElements.define('lab-card', LabCard);
 
 
 
+//JSON Main
+var gagJSON;
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+        gagJSON = JSON.parse(this.responseText);
+        console.log(gagJSON);
+        handleChangecard(gagJSON);
+    }
+}
+xhttp.open("GET", "https://golablint.azurewebsites.net/api/equipment?limit=5", true);
+xhttp.send();
+
+function handleChangecard(json) {
+    for (var i = 0; i < 5; i++) {
+        var tmpcard = document.getElementById("gtool" + (i + 1));
+        tmpcard.setAttribute("image", json[i].image);
+        tmpcard.setAttribute("vol", json[i].amount);
+        tmpcard.setAttribute("itemname", json[i].name);
+        tmpcard.setAttribute("desc", json[i].description);
+        tmpcard.setAttribute("itemid", json.id);
+    }
+} 

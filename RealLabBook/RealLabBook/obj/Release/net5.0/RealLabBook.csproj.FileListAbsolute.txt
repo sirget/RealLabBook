@@ -524,3 +524,9 @@ C:\Users\Pnach\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\
 C:\Users\bestv\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\Razor\Views\Bookings\Cancle.cshtml.g.cs
 C:\Users\bestv\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\Razor\Views\Bookings\Submit.cshtml.g.cs
 C:\Users\Pnach\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\Razor\Views\Bookings\Cancle.cshtml.g.cs
+C:\Users\Pnach\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\Razor\Views\Bookings\History.cshtml.g.cs
+C:\Users\Pnach\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\Razor\Views\BookingsLablint\Create.cshtml.g.cs
+C:\Users\Pnach\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\Razor\Views\BookingsLablint\Delete.cshtml.g.cs
+C:\Users\Pnach\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\Razor\Views\BookingsLablint\Details.cshtml.g.cs
+C:\Users\Pnach\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\Razor\Views\BookingsLablint\Edit.cshtml.g.cs
+C:\Users\Pnach\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\Razor\Views\BookingsLablint\Index.cshtml.g.cs

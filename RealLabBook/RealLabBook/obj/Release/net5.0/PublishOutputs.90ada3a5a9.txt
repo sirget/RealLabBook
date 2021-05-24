@@ -4,6 +4,7 @@ C:\Users\Pnach\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\
 C:\Users\Pnach\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\PubTmp\Out\wwwroot\css\site.css
 C:\Users\Pnach\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\PubTmp\Out\wwwroot\css\styles.css
 C:\Users\Pnach\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\PubTmp\Out\wwwroot\favicon.ico
+C:\Users\Pnach\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\PubTmp\Out\wwwroot\js\jquery-1.6.2.min.js
 C:\Users\Pnach\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\PubTmp\Out\wwwroot\js\lab-card.js
 C:\Users\Pnach\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\PubTmp\Out\wwwroot\js\site.js
 C:\Users\Pnach\Documents\GitHub\RealLabBook\RealLabBook\RealLabBook\obj\Release\net5.0\PubTmp\Out\wwwroot\js\time-card.js
