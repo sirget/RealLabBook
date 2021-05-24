@@ -31,19 +31,19 @@ namespace RealLabBook.Data
                 {
                     id = Guid.NewGuid(),
                     name = "admin",
-                    surname = "golablint",
+                    surname = "RealLabbook",
                     email = "admin@kmitl.ac.th",
-                    password = BCrypt.Net.BCrypt.HashPassword("Go@min123"),
+                    password = BCrypt.Net.BCrypt.HashPassword("Admin123"),
                     role = "อาจารย์",
                     status = "Normal"
                 },
                 new User
                 {
                     id = Guid.NewGuid(),
-                    name = "โสภิตา",
-                    surname = "เอี่ยมจุ้ย",
-                    email = "61011163@kmitl.ac.th",
-                    password = BCrypt.Net.BCrypt.HashPassword("Sopita123"),
+                    name = "วรุต",
+                    surname = "เพชรสุวรรณ",
+                    email = "6101010949@kmitl.ac.th",
+                    password = BCrypt.Net.BCrypt.HashPassword("Varut123"),
                     role = "นักศึกษา",
                     status = "Normal"
                 }

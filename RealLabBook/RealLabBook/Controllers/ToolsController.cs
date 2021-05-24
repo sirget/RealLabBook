@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RealLabBook.Data;
 using RealLabBook.Models;
-
+using Microsoft.AspNetCore.Authorization;
 
 using System.Diagnostics;
 
@@ -53,6 +53,7 @@ namespace RealLabBook.Controllers
         }
 
         // GET: Tools/Create
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View();
@@ -62,6 +63,7 @@ namespace RealLabBook.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ToolID,Toolname,Quantity")] Tool tool)
         {
@@ -73,7 +75,7 @@ namespace RealLabBook.Controllers
             }
             return View(tool);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: Tools/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -94,6 +96,7 @@ namespace RealLabBook.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ToolID,Toolname,Quantity")] Tool tool)
         {
@@ -124,7 +127,7 @@ namespace RealLabBook.Controllers
             }
             return View(tool);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: Tools/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -144,6 +147,7 @@ namespace RealLabBook.Controllers
         }
 
         // POST: Tools/Delete/5
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

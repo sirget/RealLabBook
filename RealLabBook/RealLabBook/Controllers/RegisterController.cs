@@ -33,7 +33,7 @@ namespace RealLabBook.Controllers
 
         [HttpPost]
         // [ValidateAntiForgeryToken]
-        public IActionResult Index(string name, string surname, string email, string password, string confirmPassword)
+        public async Task<IActionResult> Index(string name, string surname, string email, string password, string confirmPassword)
         {
             User user = new User();
             user.id = Guid.NewGuid();
@@ -53,7 +53,8 @@ namespace RealLabBook.Controllers
                 ViewBag.errors = JsonConvert.DeserializeObject(errorJSON);
                 return View();
             }
-            if (_db.User.FromSqlRaw($"SELECT * FROM \"User\" WHERE email = \'{user.email}\' LIMIT 1").Count() > 0)
+            List<User> checkuser = await _db.User.Where(d => d.email.Equals(user.email)).ToListAsync();
+            if (checkuser.Count() > 0)
             {
                 ModelState.AddModelError("email", "อีเมลนี้ถูกใช้งานไปแล้ว");
                 var errorList = ModelState.Where(elem => elem.Value.Errors.Any()).ToDictionary(kvp => kvp.Key.Remove(0, kvp.Key.IndexOf('.') + 1), kvp => kvp.Value.Errors.Select(e => string.IsNullOrEmpty(e.ErrorMessage) ? e.Exception.Message : e.ErrorMessage).ToArray());

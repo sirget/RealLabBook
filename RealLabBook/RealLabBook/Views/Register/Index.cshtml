@@ -2,11 +2,11 @@
     ViewData["Title"] = "ลงทะเบียน";
 }
 <div class="register-container body">
-    <h1 class="authen-title">ลงทะเบียน</h1>
+    <h1 class="authen-title">Register</h1>
     <form method="POST" asp-controller="register" asp-action="index" autocomplete="off">
         <div class="row">
             <div class="input-block">
-                <label class="input-label" for="name">ชื่อจริง</label>
+                <label class="input-label" for="name">Name</label>
                 <input class="@(ViewBag!=null &&ViewBag.errors != null &&ViewBag.errors.name !=null ? "input-box error" : "input-box")"
                        id="name" name="name" placeholder="สมชาย"
                        value="@(ViewBag != null && ViewBag.user != null&& ViewBag.user.name != null?ViewBag.user.name:"")"></input>
@@ -16,7 +16,7 @@
                 }
             </div>
             <div class="input-block">
-                <label class="input-label" for="surname">นามสกุล</label>
+                <label class="input-label" for="surname">Surname</label>
                 <input class="@(ViewBag!=null &&ViewBag.errors != null &&ViewBag.errors.surname !=null ? "input-box error" : "input-box")"
                        id="surname" name="surname" placeholder="ใจดี"
                        value="@(ViewBag != null && ViewBag.user != null&& ViewBag.user.surname != null?ViewBag.user.surname:"")"></input>
@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="input-block">
-            <label class="input-label" for="email">อีเมล</label>
+            <label class="input-label" for="email">Email</label>
             <input class="@(ViewBag!=null &&ViewBag.errors != null &&ViewBag.errors.email !=null ? "input-box error" : "input-box")"
                    id="email" name="email" type="email" placeholder="abc@gmail.com"
                    value="@(ViewBag != null && ViewBag.user != null&& ViewBag.user.email != null?ViewBag.user.email:"")"></input>
@@ -37,7 +37,7 @@
             }
         </div>
         <div class="input-block">
-            <label class="input-label" for="password">รหัสผ่าน</label>
+            <label class="input-label" for="password">Password</label>
             <input class="@(ViewBag!=null &&ViewBag.errors != null &&ViewBag.errors.password !=null ? "input-box error" : "input-box")"
                    id="password" name="password" type="password" placeholder="••••••••"
                    value="@(ViewBag != null && ViewBag.user != null&& ViewBag.user.password != null?ViewBag.user.password:"")"></input>
@@ -47,7 +47,7 @@
             }
         </div>
         <div class="input-block">
-            <label class="input-label" for="confirmPassword">ยืนยันรหัสผ่าน</label>
+            <label class="input-label" for="confirmPassword">Condirm Password</label>
             <input class="@(ViewBag!=null &&ViewBag.errors != null &&ViewBag.errors.confirmPassword !=null ? "input-box error" : "input-box")"
                    id="confirmPassword" name="confirmPassword" type="password" placeholder="••••••••"
                    value="@(ViewBag != null && ViewBag.user != null&& ViewBag.user.confirmPassword != null?ViewBag.user.confirmPassword:"")"></input>
@@ -56,7 +56,7 @@
                 <div class="error">@(ViewBag.errors.confirmPassword[0])</div>
             }
         </div>
-        <input class="register" type="submit" value="สร้างบัญชีผู้ใช้"></input>
+        <input class="register" type="submit" value="Create account"></input>
     </form>
     <img src="~/image/icon.png" alt="logo" class="register-logo" />
 </div>
