@@ -346,3 +346,28 @@ a {
 .error {
     border-color: #E74C3C;
 }
+
+.row .col-md-4 label {
+    padding-bottom: 3px;
+    font-size: 0.9rem;
+    color: #263238;
+}
+
+.row .col-md-4 input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1.5px solid #009688;
+    margin: 8px;
+}
+
+.row .col-md-4 .btn {
+    padding: 10px 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 25px;
+    color: #fff;
+    background-color: #009688;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
