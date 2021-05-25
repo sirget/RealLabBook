@@ -1,4 +1,4 @@
-﻿@model IEnumerable<RealLabBook.Models.Booking>
+﻿@model IEnumerable<RealLabBook.Models.Tool>
 
 @{
     ViewData["Title"] = "History";
@@ -7,29 +7,26 @@
 <div class="his-wrapper">
     <table class="history-table">
         <tr>
-            <th class="equipment">@Html.DisplayNameFor(model => model.BookingID)</th>
-            <th class="status">@Html.DisplayNameFor(model => model.ToolID)</th>
-            <th class="start">@Html.DisplayNameFor(model => model.start_time)</th>
+            <th class="equipment">@Html.DisplayNameFor(model => model.ToolID)</th>
+            <th class="status">@Html.DisplayNameFor(model => model.Toolname)</th>
+            <th class="start">@Html.DisplayNameFor(model => model.Quantity)</th>
         </tr>
         @foreach (var item in Model)
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.BookingID)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.ToolID)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.start_time)
+                    @Html.DisplayFor(modelItem => item.Toolname)
                 </td>
                 <td>
-                    @using System.Security.Claims;
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
 
-                    <form asp-action="Delete" asp-route-id="@item.BookingID">
-                        <input type="hidden" asp-for="@item.BookingID" />
-                        <input style="font-weight: bold; color: #E74C3C; background-color: transparent; font-size: 16px; cursor: pointer; border: none;" type="submit" value="Cancel" class="btn btn-danger" />
-                    </form>
+                <a asp-action="Edit" asp-controller="Tools" asp-route-id="@item.ToolID">Edit</a>
+                    
                 </td>
             </tr>
         }

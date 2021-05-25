@@ -76,19 +76,18 @@ namespace RealLabBook.Controllers
             return View(booking);
         }
 
-        public async Task<IActionResult> History(string UserID)
+        public async Task<IActionResult> History(string email)
         {
-            return View(await _context.Bookings.Where(d => d.UserID.Equals(UserID)).ToListAsync());
+             List<User> user = await _context.User.Where(d => d.email.Equals(email)).ToListAsync();
+            
+            return View(await _context.Bookings.Where(d => d.UserID.Equals(""+user[0].id)).ToListAsync());
         }
 
         [Authorize(Roles = "User")]
         public async Task<IActionResult> Submit(int ToolID, string date,string UserID,string quan)
-        { 
-            List<Blacklist> blacklists = await _context.Blacklists.Where(d => d.UserID.Equals(UserID)).ToListAsync();
-            if(blacklists != null)
-            {
-                //return RedirectToAction("Banned","BookingsController");
-            }
+        {
+            List<User> user = await _context.User.Where(d => d.email.Equals(UserID)).ToListAsync();
+
             string[] time = { " 08:00", " 09:00", " 10:00", " 11:00", " 12:00", " 13:00", " 14:00", " 15:00", };
             List<int> Listbooked = new List<int>();
             IList<Booking> BookedList = new List<Booking>();
@@ -101,7 +100,7 @@ namespace RealLabBook.Controllers
 
                     booking.ToolID = ToolID;
                     booking.start_time = date + time[tmp];
-                    booking.UserID = UserID;
+                    booking.UserID = ""+user[0].id;
                     BookedList.Add(booking);
                     Listbooked.Add(booking.BookingID);
                     _context.Add(booking);
@@ -233,12 +232,15 @@ namespace RealLabBook.Controllers
         {
             
             var booking = await _context.Bookings.FindAsync(id);
-            
+
+            Guid UserGUID = Guid.Parse(booking.UserID);
+            var user = await _context.User.FindAsync(UserGUID);
+
             _context.Bookings.Remove(booking);
             await _context.SaveChangesAsync();
 
 
-            return Redirect(string.Format("~/Bookings/History?UserID={0}", booking.UserID));
+            return Redirect(string.Format("~/Bookings/History?email={0}", user.email));
         }
 
         private bool BookingExists(int id)

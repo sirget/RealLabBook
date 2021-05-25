@@ -13,10 +13,15 @@
                 BookingID
             </th>
             <th>
-                ToolID
+                |
             </th>
             <th>
-                UserID
+                ToolID
+            </th>
+           
+            
+            <th>
+                |
             </th>
             <th>
                 Start_time
@@ -32,23 +37,20 @@
                 @Html.DisplayFor(modelItem => item.BookingID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ToolID)
+                |
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UserID)
+                @Html.DisplayFor(modelItem => item.ToolID)
+            </td>
+           
+            
+            <td>
+                |
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.start_time)
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.BookingID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.BookingID">Details</a> |
 
-                <form asp-action="Delete" asp-route-id="@item.BookingID" >
-                    <input type="hidden" asp-for="@item.BookingID" />
-                    <input type="submit"  value="Delete" class="btn btn-danger" /> |
-                </form>
-            </td>
         </tr>
         }
     </tbody>

@@ -17,9 +17,43 @@
     <header>
         <div class="topnav">
             <a href="/" class="home">LABBOOK</a>
-            <a asp-controller="Bookings" asp-action="History" class="history" >Booking History</a>
-            <a asp-controller="Login" asp-action="Index" class="state" id="state" style="float:right">Login</a>
-            <a asp-controller="Register" asp-action="Index" class="state" id="state" style="float:right">Register</a>
+            @using System.Security.Claims;
+            @{ bool isAuthenticated = Context.User.Identity.IsAuthenticated;
+
+                string role = "";
+                if (isAuthenticated) role = Context.User.Claims.Where(claim => claim.Type ==
+                     ClaimTypes.Role).FirstOrDefault().Value;
+
+                if (isAuthenticated)
+                {
+                    <a href="/Bookings/History?email=@(Context.User.Claims.Where(claim => claim.Type ==
+                     ClaimTypes.Email).FirstOrDefault().Value)" class="history">Booking History</a>
+                }
+
+                @if (role == "Admin")
+                {
+                    <a asp-controller="Blacklists" asp-action="Index" class="history">Edit Users</a>
+                    <a asp-controller="Tools" asp-action="List" class="history">Edit Tools</a>
+                }
+                if (isAuthenticated)
+                {
+                    <a style="float:right">
+                        @(Context.User.Claims.Where(claim => claim.Type ==
+                        ClaimTypes.Name).FirstOrDefault().Value + " " + Context.User.Claims.Where(claim => claim.Type ==
+                        ClaimTypes.Surname).FirstOrDefault().Value)
+                    </a>
+                    <a asp-controller="Login" asp-action="Logout" class="state" id="state" style="float:right">Logout</a>
+                }
+                else
+                {
+                    <a asp-controller="Login" asp-action="Index" class="state" id="state" style="float:right">Login</a>
+                    <a asp-controller="Register" asp-action="Index" class="state" id="state" style="float:right">Register</a>
+                }
+
+            }
+
+
+
         </div>
     </header>
     
@@ -33,6 +67,7 @@
         <div class="container">
             &copy; 2021 - Labbook - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
+
     </footer>
 
     @await RenderSectionAsync("Scripts", required: false)

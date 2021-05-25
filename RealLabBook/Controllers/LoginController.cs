@@ -56,8 +56,11 @@ namespace RealLabBook.Controllers
             ClaimsIdentity identity = null;
             identity = new ClaimsIdentity(new[] {
                 new Claim(ClaimTypes.Name, userData.name),
+
                     new Claim(ClaimTypes.Surname, userData.surname),
-                    new Claim(ClaimTypes.Role, userData.role == "อาจารย์" ? "Admin" : "User"),
+                    new Claim(ClaimTypes.Email, userData.email),
+                    new Claim(ClaimTypes.Role, userData.role),
+                    //new Claim(ClaimTypes.Role, userData.role == "อาจารย์" ? "Admin" : "User"),
                     new Claim(ClaimTypes.NameIdentifier, userData.id.ToString()),
             }, CookieAuthenticationDefaults.AuthenticationScheme);
             var principal = new ClaimsPrincipal(identity);

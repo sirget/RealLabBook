@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace RealLabBook.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class BlacklistsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -68,19 +68,14 @@ namespace RealLabBook.Controllers
         }
 
         // GET: Blacklists/Edit/5
-        public async Task<IActionResult> Edit(string id)
+        public async Task<IActionResult> Edit(Guid id)
         {
             if (id == null)
             {
                 return NotFound();
             }
-
-            var blacklist = await _context.Blacklists.FindAsync(id);
-            if (blacklist == null)
-            {
-                return NotFound();
-            }
-            return View(blacklist);
+            var user = await _context.User.FindAsync(id);
+            return View(user);
         }
 
         // POST: Blacklists/Edit/5
@@ -88,34 +83,17 @@ namespace RealLabBook.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("UserID")] Blacklist blacklist)
+        public async Task<IActionResult> Edit([Bind("id,password,status,name,surname,email,role")] User user)
         {
-            if (id != blacklist.UserID)
-            {
-                return NotFound();
-            }
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(blacklist);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!BlacklistExists(blacklist.UserID))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(blacklist);
+
+
+          
+                _context.Update(user);
+                await _context.SaveChangesAsync();
+            
+            return RedirectToAction("Index", "Blacklists");
+
         }
 
         // GET: Blacklists/Delete/5

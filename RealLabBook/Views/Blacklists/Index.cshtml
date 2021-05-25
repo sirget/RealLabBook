@@ -4,12 +4,10 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Black Lists</h1>
+<h1>User Lists</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+
+<table class="history-table">
     <thead>
         <tr>
             <th>
@@ -20,6 +18,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.role)
             </th>
         </tr>
     </thead>
@@ -36,7 +37,10 @@
                 @Html.DisplayFor(modelItem => item.surname)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.id">Delete</a>
+                @Html.DisplayFor(modelItem => item.role)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Edit</a>
             </td>
         </tr>
 }

@@ -43,7 +43,7 @@ namespace RealLabBook.Controllers
             user.password = password;
             user.confirmPassword = confirmPassword;
             var re = new Regex("^\\d+$");
-            user.role = user.email != null && user.email.IndexOf('@') != -1 && re.Matches(user.email.Remove(user.email.IndexOf('@'))).Count > 0 ? "นักศึกษา" : "อาจารย์";
+            user.role = user.email != null && user.email.IndexOf('@') != -1 && re.Matches(user.email.Remove(user.email.IndexOf('@'))).Count > 0 ? "User" : "Admin";
             user.status = "Normal";
             ViewBag.user = user;
             if (!TryValidateModel(user, nameof(user)))

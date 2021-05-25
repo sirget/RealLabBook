@@ -52,6 +52,15 @@ namespace RealLabBook.Controllers
             return View(tool);
         }
 
+        public async Task<IActionResult> List()
+        {
+
+            List<Tool> tools = await _context.Tools.ToListAsync();
+
+            return View(tools);
+        }
+
+
         [Authorize(Roles = "Admin")]
         // GET: Tools/Create
         public IActionResult Create()
@@ -121,7 +130,7 @@ namespace RealLabBook.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(List));
             }
             return View(tool);
         }
