@@ -541,3 +541,6 @@ C:\Users\bestv\Documents\GitHub\RealLabBook\RealLabBook\obj\Debug\net5.0\RealLab
 C:\Users\bestv\Documents\GitHub\RealLabBook\RealLabBook\obj\Debug\net5.0\RealLabBook.genruntimeconfig.cache
 C:\Users\bestv\Documents\GitHub\RealLabBook\RealLabBook\obj\Debug\net5.0\Razor\Views\Tools\List.cshtml.g.cs
 C:\Users\bestv\Documents\GitHub\RealLabBook\RealLabBook\obj\Debug\net5.0\Razor\Views\Bookings\List.cshtml.g.cs
+C:\Users\Pnach\Documents\GitHub\RealLabBook\RealLabBook\obj\Debug\net5.0\Razor\Views\accessdenied\Index.cshtml.g.cs
+C:\Users\Pnach\Documents\GitHub\RealLabBook\RealLabBook\obj\Debug\net5.0\Razor\Views\Bookings\List.cshtml.g.cs
+C:\Users\Pnach\Documents\GitHub\RealLabBook\RealLabBook\obj\Debug\net5.0\Razor\Views\Tools\List.cshtml.g.cs
