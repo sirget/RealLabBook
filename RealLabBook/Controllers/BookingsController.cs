@@ -113,6 +113,15 @@ namespace RealLabBook.Controllers
             ViewData["BookedList"] = BookedList;
             return View();
         }
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> List()
+        {
+            List<Booking> booking = await _context.Bookings.ToListAsync();
+            
+
+            return View(booking);
+        }
+
         [Authorize(Roles = "User")]
         // GET: Bookings/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -241,6 +250,24 @@ namespace RealLabBook.Controllers
 
 
             return Redirect(string.Format("~/Bookings/History?email={0}", user.email));
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost, ActionName("DeleteList")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteList(int id)
+        {
+
+            var booking = await _context.Bookings.FindAsync(id);
+
+            Guid UserGUID = Guid.Parse(booking.UserID);
+            var user = await _context.User.FindAsync(UserGUID);
+
+            _context.Bookings.Remove(booking);
+            await _context.SaveChangesAsync();
+
+
+            return Redirect(string.Format("~/Bookings/List"));
         }
 
         private bool BookingExists(int id)

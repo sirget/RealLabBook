@@ -24,7 +24,7 @@
                 if (isAuthenticated) role = Context.User.Claims.Where(claim => claim.Type ==
                      ClaimTypes.Role).FirstOrDefault().Value;
 
-                if (isAuthenticated)
+                if (role == "User")
                 {
                     <a href="/Bookings/History?email=@(Context.User.Claims.Where(claim => claim.Type ==
                      ClaimTypes.Email).FirstOrDefault().Value)" class="history">Booking History</a>
@@ -34,6 +34,7 @@
                 {
                     <a asp-controller="Blacklists" asp-action="Index" class="history">Edit Users</a>
                     <a asp-controller="Tools" asp-action="List" class="history">Edit Tools</a>
+                    <a asp-controller="Bookings" asp-action="List" class="history">Edit Bookings</a>
                 }
                 if (isAuthenticated)
                 {
