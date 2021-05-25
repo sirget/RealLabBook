@@ -28,18 +28,28 @@
                 <input type="email" asp-for="email" class="form-control" />
                 <span asp-validation-for="email" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="role" class="control-label"></label>
-                <input asp-for="role" class="form-control" />
-                <span asp-validation-for="role" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+            @*<div class="form-group">
+                        <label asp-for="role" class="control-label"></label>
+                        <input asp-for="role" class="form-control" />
+                        <span asp-validation-for="role" class="text-danger"></span>
+                    </div>*@
+                    <div class="form-group">
+                        <input asp-for="role" type="radio" id="male" name="role" value="Admin">
+                        <label asp-for="role" for="Admin">Admin</label><br>
+                        <input asp-for="role" type="radio" id="female" name="role" value="User">
+                        <label asp-for="role" for="User">User</label><br>
+                        <input asp-for="role" type="radio" id="Banned" name="role" value="Banned">
+                        <label asp-for="role" for="Banned">Banned</label>
+                    </div>
 
-    @section Scripts {
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    }
+
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+            @section Scripts {
+                @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+            }
